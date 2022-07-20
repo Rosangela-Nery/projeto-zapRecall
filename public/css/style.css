@@ -8,14 +8,75 @@ body {
     background-color: #FB6B6B;
 }
 
+/* Pagina de Boas Vindas */
+
+.pagina1 {
+    width: 100%;
+    height: 100%;
+
+    margin-top: 250px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginaDeBoasVindas {
+    width: 300px;
+    height: 100%;
+
+    font-size: 50px;
+    font-family: 'Righteous';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginaDeBoasVindas img {
+    width: 153px;
+    height: 178px;
+    margin-bottom: 25px;
+}
+
+.paginaDeBoasVindas h1 {
+    margin-bottom: 40px;
+}
+
+.pagina1 button {
+    width: 250px;
+    height: 58px;
+    color: #D70900;
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background-color: white;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagina1 button:active {
+    transform: scale(0.97);
+}
+
+
+/* Pagina Reacall */
 .paginaZapReacall {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 
 .conteudo {
     width: 600px;
-    margin-top: 50px;
+    margin-top: 60px;
+    margin-bottom: 85px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -38,6 +99,7 @@ body {
     font-family: 'Righteous';
     font-size: 64px;
     align-items: center;
+    cursor: pointer;
 }
 
 .galeriaDePerguntas {
@@ -61,6 +123,11 @@ body {
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
+    cursor: pointer;
+}
+
+.pergunta:active {
+    transform: scale(0.97);
 }
 
 .pergunta > ion-icon {
@@ -81,5 +148,110 @@ body {
 
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
+}
+
+.invisivel {
+    display: none;
+}
+
+@media screen and (max-width: 550px){
+    .logoMarca {
+        width: 400px;
+        font-size: 50px;
+    }
+    .logoMarca img {
+        width: 69px;
+        height: 80px;
+    }
+
+    .pergunta {
+        width: 435px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .logoMarca {
+        width: 400px;
+        font-size: 36px;
+    }
+
+    .logoMarca img {
+        width: 52px;
+        height: 60px;
+    }
+
+    .galeriaDePerguntas {
+        margin-top: 40px;
+    }
+
+    .pergunta {
+        width: 340px;
+        height: 70px;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .pergunta > ion-icon {
+        width: 25px;
+        height: 28px;
+    }
+
+    .pagina1 {
+        margin-top: 120px;
+    }
+
+    .paginaDeBoasVindas {
+        font-size: 36px;
+    }
+
+    .paginaDeBoasVindas img {
+        width: 136px;
+        height: 161px;
+    }
+
+    .paginaDeBoasVindas h1 {
+        margin-bottom: 40px;
+    }
+
+    .paginaDeBoasVindas button {
+        width: 246px;
+        height: 54px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .logoMarca {
+        width: 400px;
+        font-size: 36px;
+    }
+
+    .logoMarca img {
+        width: 52px;
+        height: 60px;
+    }
+
+    .galeriaDePerguntas {
+        margin-top: 40px;
+    }
+
+    .pergunta {
+        width: 300px;
+        height: 65px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .pergunta > ion-icon {
+        width: 20px;
+        height: 23px;
+    }
+
+    .barraInferior {
+        font-size: 18px;
+    }
 }
