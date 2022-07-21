@@ -1,5 +1,6 @@
 import React from "react";
-import Pagina1 from "./Pagina1";
+import './pages.css';
+import Perguntas from "../perguntas/Perguntas";
 
 function GaleriaDePerguntas (
     { paragrafo, play}
@@ -12,7 +13,9 @@ function GaleriaDePerguntas (
     );
 }
 
-export default function Pagina2 () {
+export default function Pagina2 ({
+        tela, setTela
+    }) {
 
     let novoItem = [
         {paragrafo: "Pergunta 1", play:"play-outline"},
@@ -21,29 +24,23 @@ export default function Pagina2 () {
         {paragrafo: "Pergunta 4", play:"play-outline"},
     ]
 
-    const [inicio, setInicio] = React.useState(true);
-
     return (
         <>
-            {inicio ? (
-                <div className="paginaZapReacall ">
-                    <div className="conteudo">
-                        <div className="logoMarca" onClick={() => setInicio(!inicio)}>
-                            <img src="./imagens/iconeLogo.svg" />
-                            <h1>ZapRecall</h1>
-                        </div>
-                        <div className="galeriaDePerguntas">
-                            {novoItem.map((item) => <GaleriaDePerguntas paragrafo={item.paragrafo} play={item.play}/>)}
-                        </div>
+            <div className="paginaZapReacall ">
+                <div className="conteudo">
+                    <div className="logoMarca" onClick={() => setTela(!tela)}>
+                        <img src="./imagens/iconeLogo.svg" />
+                        <h1>ZapRecall</h1>
                     </div>
-                    <div className="barraInferior">
-                        <p>0/4 CONCLUÍDOS</p>
+                    <div className="galeriaDePerguntas invisivel">
+                        {novoItem.map((item) => <GaleriaDePerguntas paragrafo={item.paragrafo} play={item.play}/>)}
                     </div>
+                    <Perguntas />
                 </div>
-            ) : (
-                <Pagina1 />
-            )}
-            
+                <div className="barraInferior">
+                    <p>0/4 CONCLUÍDOS</p>
+                </div>
+            </div>
         </>
     );
 }

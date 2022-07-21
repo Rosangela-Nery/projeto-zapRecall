@@ -1,23 +1,21 @@
-import Pagina2 from "./Pagina2";
 import React from "react";
+import './pages.css';
 
-export default function Pagina1 () {
-
-    const [tela, setTela] = React.useState(true);
+export default function Pagina1 ({
+    tela, setTela
+}) {
 
     return (
         <>
-            {tela ? (
-                <div className="pagina1">
-                    <div className="paginaDeBoasVindas">
+            <div className="pagina1">
+                <div className="paginaDeBoasVindas">
+                    <div className="logoMarca" onClick={() => setTela(!tela)}>
                         <img src="./imagens/iconeLogo.svg" />
                         <h1>ZapRecall</h1>
-                        <button onClick={() => setTela(!tela)}>Iniciar Recall!</button>
                     </div>
+                    <button onClick={() => setTela(!tela)}>Iniciar Recall!</button>
                 </div>
-            ) : (
-                <Pagina2 />
-            )}
+            </div>
         </>
     );
 }
