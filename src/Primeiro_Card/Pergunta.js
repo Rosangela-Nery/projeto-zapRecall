@@ -6,74 +6,64 @@ import erro from '../imagens/x.svg';
 import orange from '../imagens/laranja.svg';
 
 function QualEOCard (props) {
-    const [clicar, setClicar] = React.useState(true);
-    const [virar, setVirar] = React.useState(true);
-    const [vermelho, setVermelho] = React.useState(true);
-    const [laranja, setLaranja] = React.useState(true);
-    const [verde, setVerde] = React.useState(true);
+    const [clicar, setClicar] = React.useState(false);
+    const [virar, setVirar] = React.useState(false);
+    const [resposta, setResposta] = React.useState(false);
+    const [finalizado, setFinalizado] = React.useState(false);
 
-    return (
-        <>
-            {clicar ? (
-                <div className="pergunta">
+    const imagens = {
+        perguntaVermelha: erro,
+        perguntaLaranja: orange,
+        perguntaVerde: certo,
+    }
+
+
+    if(clicar && virar && (finalizado)) {
+        return <div className={resposta}>
                     <p>{props.title}</p>
-                    <ion-icon name="play-outline" onClick={() => setClicar(!clicar)}></ion-icon>
+                    <img src={imagens[resposta]}></img>
                 </div>
-            ) : (
-                <> 
-                    {virar ? (
-                        <div className="perguntas">
-                            <p>{props.pergunta}</p>
-                            <img src={recarregar} onClick={() => setVirar(!virar)}></img>
-                        </div>
-            ) : (
-                <>
-                    {vermelho ? (
-                        <>
-                            {verde ? (
-                                <>
-                                {laranja ? (
-                                    <div className="resposta">
-                                    <p>{props.resposta}</p>
-                                    <div className="status">
-                                        <div className="vermelho" onClick={() => setVermelho(!vermelho)}>
-                                            <p>Não lembrei</p>
-                                        </div>
-                                        <div className="laranja" onClick={() => setLaranja(!laranja)}>
-                                            <p>Quase esqueci</p>
-                                        </div>
-                                        <div className="verde" onClick={() => setVerde(!verde)}>
-                                            <p>Zap!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                ) : (
-                                    <div className="perguntaLaranja">
-                                        <p>{props.title}</p>
-                                        <img src={orange}></img>
-                                    </div>
-                                )}
-                                </>
-                                ) : (
-                                    <div className="perguntaVerde">
-                                        <p>{props.title}</p>
-                                        <img src={certo}></img>
-                                    </div>
-                                )} 
-                        </>
-                    ) : ( 
-                    <div className="perguntaVermelha">
-                        <p>{props.title}</p>
-                        <img src={erro}></img>
-                    </div>
-                    )}
-                </>
-             )}
-                </>
-            )}
+    }
 
-        </>
-    );
+    if(clicar && virar) {
+        return <div className="resposta">
+            <p>{props.resposta}</p>
+            <div className="status">
+                <div className="vermelho" onClick={() => {
+                    setResposta('perguntaVermelha');
+                    setFinalizado(true);
+                    }}>
+                    <p>Não lembrei</p>
+                </div>
+                <div className="laranja" onClick={() => {
+                    setResposta('perguntaLaranja');
+                    setFinalizado(true);
+                    }}>
+                    <p>Quase esqueci</p>
+                </div>
+                <div className="verde" onClick={() => {
+                    setResposta('perguntaVerde');
+                    setFinalizado(true);
+                    }}>
+                    <p>Zap!</p>
+                </div>
+            </div>
+        </div>
+    }
+
+    if(!clicar) {
+        return <div className="pergunta">
+            <p>{props.title}</p>
+            <ion-icon name="play-outline" onClick={() => setClicar(true)}></ion-icon>
+            </div>
+    }
+
+    if(!virar) {
+        return <div className="perguntas">
+                    <p>{props.pergunta}</p>
+                    <img src={recarregar} onClick={() => setVirar(true)}></img>
+              </div>
+    }
 }
 
 export default function GaleriaDeCards (props) {

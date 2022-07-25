@@ -211,7 +211,7 @@
 }
 
 .status {
-    width: 480px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,9 +266,26 @@
         height: 80px;
     }
 
-    .pergunta {
+    .pergunta, .perguntaVerde, .perguntaVermelha, .perguntaLaranja {
         width: 435px;
         height: 75px;
+    }
+
+    .perguntas, .resposta {
+        width: 435px;
+    }
+
+    .vermelho, .laranja, .verde {
+        width: 100px; 
+    }
+
+
+    .vermelho p, .laranja p, .verde p {
+        width: 60px;
+    }
+
+    .vermelho, .laranja {
+        margin-right: 8px;
     }
 }
 
@@ -287,7 +304,7 @@
         margin-top: 40px;
     }
 
-    .pergunta {
+    .pergunta, .perguntaVerde, .perguntaVermelha, .perguntaLaranja {
         width: 340px;
         height: 70px;
         margin-bottom: 20px;
@@ -321,6 +338,14 @@
         height: 54px;
         font-size: 18px;
     }
+
+    .perguntas, .resposta {
+        width: 340px;
+    }
+
+    .vermelho, .laranja, .verde {
+        width: 85px; 
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -328,7 +353,7 @@
         margin-top: 40px;
     }
 
-    .pergunta {
+    .pergunta, .perguntaVerde, .perguntaVermelha, .perguntaLaranja {
         width: 300px;
         height: 65px;
         margin-bottom: 20px;
@@ -342,6 +367,14 @@
 
     .barraInferior {
         font-size: 18px;
+    }
+
+    .perguntas, .resposta {
+        width: 300px;
+    }
+
+    .vermelho, .laranja, .verde {
+        width: 85px; 
     }
 }
 
