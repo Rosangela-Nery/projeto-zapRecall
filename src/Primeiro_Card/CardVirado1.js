@@ -1,6 +1,6 @@
 import React from "react";
 import '../pages/pages.css';
-import Pergunta from "./Pergunta";
+import GaleriaDeCards  from "./Pergunta";
 
 export default function CardVirado1 () {
 
@@ -49,7 +49,7 @@ export default function CardVirado1 () {
 
     return (
         <>
-            <Pergunta itens={itens}/>
+            <GaleriaDeCards  itens={itens}/>
         </>
     );
 }

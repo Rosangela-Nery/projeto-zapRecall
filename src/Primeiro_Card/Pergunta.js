@@ -5,7 +5,7 @@ import certo from '../imagens/certo.svg';
 import erro from '../imagens/x.svg';
 import orange from '../imagens/laranja.svg';
 
-function QualEAPergunta (props) {
+function QualEOCard (props) {
     const [clicar, setClicar] = React.useState(true);
     const [virar, setVirar] = React.useState(true);
     const [vermelho, setVermelho] = React.useState(true);
@@ -76,11 +76,11 @@ function QualEAPergunta (props) {
     );
 }
 
-export default function Pergunta(props) {
+export default function GaleriaDeCards (props) {
 
     return (
         <>
-            {props.itens.map((item, index) => (<QualEAPergunta index={index} title={item.title} pergunta={item.pergunta} resposta={item.resposta}/>))}
+            {props.itens.map((item, index) => (<QualEOCard index={index} title={item.title} pergunta={item.pergunta} resposta={item.resposta}/>))}
         </>
     );
 }
