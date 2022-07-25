@@ -2,10 +2,14 @@ import React from "react";
 import iconeLogo from '../imagens/iconeLogo.svg';
 import '../pages/pages.css';
 import CardVirado1 from "../Primeiro_Card/CardVirado1";
+import Barra from "../Primeiro_Card/Barra";
 
 export default function Pagina2 ({
         tela, setTela
     }) {
+
+        const [barra, setBarra] = React.useState([]);
+        const [numero, setNumero] = React.useState(0);
 
     return (
         <>
@@ -16,12 +20,10 @@ export default function Pagina2 ({
                         <h1>ZapRecall</h1>
                     </div>
                     <div className="galeriaDePerguntas">
-                        <CardVirado1 />
+                        <CardVirado1 setBarra={setBarra} setNumero={setNumero} numero={numero}/>
                     </div>
                 </div>
-                <div className="barraInferior">
-                    <p>0/4 CONCLUÍDOS</p>
-                </div>
+                    <Barra barra={barra} numero={numero}/>
             </div>
         </>
     );
