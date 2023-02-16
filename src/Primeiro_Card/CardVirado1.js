@@ -53,7 +53,7 @@ export default function CardVirado1 ({
 
     return (
         <>
-            <GaleriaDeCards  itens={itens} setBarra={setBarra}  setNumero={setNumero} numero={numero}/>
+            <GaleriaDeCards  itens={item} setBarra={setBarra}  setNumero={setNumero} numero={numero}/>
         </>
     );
 }
