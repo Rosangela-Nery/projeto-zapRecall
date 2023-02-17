@@ -78,7 +78,7 @@ export default function GaleriaDeCards (props) {
 
     return (
         <>
-            {props.itens.map((item, index) => (<QualEOCard index={index} title={item.title} pergunta={item.pergunta} resposta={item.resposta} setBarra={props.setBarra} setNumero={props.setNumero} numero={props.numero}/>))}
+            {props.itens.map((item, index) => (<QualEOCard key={item.id} index={index} title={item.title} pergunta={item.pergunta} resposta={item.resposta} setBarra={props.setBarra} setNumero={props.setNumero} numero={props.numero}/>))}
         </>
     );
 }
