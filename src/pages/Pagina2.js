@@ -16,7 +16,7 @@ export default function Pagina2 ({
             <div className="paginaZapReacall ">
                 <div className="conteudo">
                     <div className="logoMarca" onClick={() => setTela(!tela)}>
-                        <img src={iconeLogo} />
+                        <img src={iconeLogo} title="" />
                         <h1>ZapRecall</h1>
                     </div>
                     <div className="galeriaDePerguntas">
