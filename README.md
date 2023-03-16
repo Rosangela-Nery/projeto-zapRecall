@@ -5,7 +5,7 @@
  O ZapRecall é um app de flashcards que são cartões que contém uma pergunta na frente e a resposta atrás.
 O Objetivo é ler a pergunta e tentar lembrar da resposta antes de virar o cartão, se você conseguir acertar da um "Zap!", caso contrário , você clica em "Não lembrei" ou "Quase esqueci".
 
-<img src="src/imagens/1.png" width=2300px height=500px/>
+<img src="src/imagens/1.png" width=1500px height=500px/>
 
 
 #
